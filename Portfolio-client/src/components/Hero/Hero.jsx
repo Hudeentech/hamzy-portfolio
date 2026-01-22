@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "../Hero/Hero.css";
+import "./Hero.css";
 import { client, urlFor } from '../../client';
 
 function Hero() {
