@@ -1,0 +1,158 @@
+:root {
+    /* Font Loading (Assumed loaded in index.html or font file) */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+  
+    /* =========================================
+       THEME: LIGHT (Default)
+       ========================================= */
+    --bg-main: #F3F4F6;        /* Light cool gray */
+    --bg-surface: #FFFFFF;     /* White cards */
+    
+    --text-main: #111827;      /* Nearly black */
+    --text-muted: #6B7280;     /* Medium gray */
+    --text-on-accent: #FFFFFF;
+  
+    --accent-primary: #4F46E5; /* Indigo 600 */
+    --accent-hover: #4338CA;   /* Indigo 700 */
+    --accent-glow: rgba(79, 70, 229, 0.2);
+  
+    --border-light: #E5E7EB;   /* Light gray border */
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+    --nav-height: 80px;
+  }
+  
+  /* =========================================
+     THEME: DARK
+     ========================================= */
+  [data-theme='dark'] {
+    --bg-main: #0a0a0a;        /* Deep black - Modern SaaS feel */
+    --bg-surface: #171717;     /* Dark gray/charcoal */
+    --bg-surface-2: #262626;   /* Lighter gray */
+    
+    --text-main: #F9FAFB;      /* Off-white */
+    --text-muted: #9CA3AF;     /* Light pastel gray */
+    --text-on-accent: #FFFFFF;
+  
+    --accent-primary: #6366f1; /* Indigo 500 - Brighter for dark mode */
+    --accent-hover: #818cf8;   /* Indigo 400 */
+    --accent-glow: rgba(99, 102, 241, 0.25);
+  
+    --border-light: #262626;   /* Dark border */
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Global Reset & Base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  button {
+    font-family: var(--font-body);
+  }
+  
+  /* =========================================
+     UTILITIES
+     ========================================= */
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .section-padding {
+    padding: 6rem 0;
+  }
+  
+  /* Button Styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Rounded friendly pill shape */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--text-on-accent);
+    box-shadow: 0 4px 14px 0 var(--accent-glow);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 var(--accent-glow);
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border-color: var(--border-light);
+    color: var(--text-main);
+  }
+  
+  .btn-outline:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+  
+  /* Compatibility Mappings for older components (if any partially managed) */
+  :root {
+    --bg-color: var(--bg-main);
+    --bg-secondary: var(--bg-surface);
+    --bg-card: var(--bg-surface);
+    --text-primary: var(--text-main);
+    --text-secondary: var(--text-muted);
+    --accent-color: var(--accent-primary);
+    --accent-main: var(--accent-primary);
+    --line-color: var(--border-light);
+    --border-color: var(--border-light);
+    --max-width: 1400px;
+  }

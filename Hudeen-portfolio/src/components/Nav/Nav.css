@@ -1,0 +1,272 @@
+/* Nav Container - Graphic Design Minimal */
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 1000;
+  background: var(--bg-surface); /* Solid background, no glass */
+  border-bottom: 1px solid transparent; /* Cleaner look */
+  transition: all 0.3s ease;
+}
+
+/* Scrolled state could add a border if needed, but keeping it clean */
+.nav-wrapper.scrolled {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1600px; /* Wider match */
+  margin: 0 auto;
+  padding: 0 4%; /* Percent based padding */
+}
+
+/* Logo */
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 900; /* Extra bold */
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: -0.04em; /* Tight tracking */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.nav-logo span {
+  color: #FF6600; /* Orange Accent */
+}
+
+/* Desktop Links */
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-link-item a {
+  font-family: 'Space Grotesk', monospace; /* Editorial clean font */
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background: transparent !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-link-item a:hover {
+  color: var(--text-main);
+}
+
+.nav-link-item a.active {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* Orange minimal underline for active/hover */
+.nav-link-item a.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -15px; /* Dot on left instead of underline? Or simple underline. Let's do simple underline. */
+  left: 0;
+  top: auto;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #FF6600; /* Orange */
+  border-radius: 0;
+} 
+
+/* Actions (Theme Toggle + CTA) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: #FF6600;
+  background: transparent;
+}
+
+.nav-cta,
+.nav-cta-mobile {
+  display: inline-block;
+  background: var(--text-main) !important;
+  border: none !important;
+  color: var(--bg-main) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover,
+.nav-cta-mobile:hover {
+    background: #FF6600 !important; /* Orange Hover */
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%; /* Full width for immersive feel */
+  max-width: 100%;
+  height: 100%;
+  background: var(--bg-surface);
+  z-index: 2000;
+  padding: 2rem;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content */
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Staggered Animation for List Items */
+.mobile-nav-list li {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-sidebar.open .mobile-nav-list li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-sidebar.open .mobile-nav-list li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-sidebar.open .mobile-nav-list li:nth-child(2) { transition-delay: 0.2s; }
+.mobile-sidebar.open .mobile-nav-list li:nth-child(3) { transition-delay: 0.3s; }
+.mobile-sidebar.open .mobile-nav-list li:nth-child(4) { transition-delay: 0.4s; }
+.mobile-sidebar.open .mobile-nav-list li:nth-child(5) { transition-delay: 0.5s; }
+.mobile-sidebar.open .mobile-nav-list li:nth-child(6) { transition-delay: 0.6s; }
+
+.mobile-nav-list a {
+  font-family: var(--font-heading);
+  font-size: 3rem; /* Massive mobile type */
+  font-weight: 900;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-list a:hover {
+  color: #FF6600;
+}
+
+.mobile-backdrop {
+    display: none; /* No backdrop needed for full width sidebar */
+}
+
+@media screen and (max-width: 900px) {
+  .nav-links, .nav-cta {
+    display: none !important;
+  }
+  
+  .nav-content {
+      padding: 0 1.5rem; /* Tighter padding for mobile */
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem; /* Slightly smaller icon */
+  }
+
+  /* Sidebar Adjustment for Small Screens */
+  .mobile-sidebar {
+      padding: 1.5rem;
+      justify-content: center;
+  }
+
+  .sidebar-header {
+      top: 1.5rem;
+      right: 1.5rem;
+  }
+
+  .mobile-nav-list a {
+      font-size: 2.2rem; /* Reduce from 3rem to fit SE screen */
+  }
+  
+  .mobile-nav-list {
+      gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+    .nav-logo {
+        font-size: 1.4rem;
+    }
+}

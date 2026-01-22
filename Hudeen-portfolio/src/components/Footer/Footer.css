@@ -1,0 +1,164 @@
+/* Footer Section - Graphic Design Editorial */
+.footer {
+  padding: 8rem 0 4rem;
+  background: var(--bg-main);
+  border-top: 1px solid var(--text-main); /* Strong divider */
+  width: 92%; /* Match other containers */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.contact-headlines {
+  text-align: left;
+  margin-bottom: 6rem;
+}
+
+.contact-caption {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1rem;
+  color: #FF6600; /* Orange Accent */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 600;
+}
+
+.contact-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 10vw, 8rem); /* Massive Impact */
+  font-weight: 900;
+  line-height: 0.9;
+  color: var(--text-main);
+  text-transform: uppercase;
+  max-width: 100%;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+/* Contact Links - Horizontal Strip or Massive Stack */
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.contact-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-links li {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.contact-links li a {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.contact-links li a:hover {
+  color: #FF6600;
+  font-weight: 700;
+}
+
+.contact-links li a::before {
+  content: '→';
+  margin-right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #FF6600;
+}
+
+.contact-links li a:hover::before {
+  opacity: 1;
+}
+
+/* CTA Button - Minimal big button */
+.buzz {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  background: var(--text-main);
+  color: var(--bg-main);
+  border: none;
+  border-radius: 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+}
+
+.buzz:hover {
+  background: #FF6600;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Footer Bottom Strip */
+.footer-meta {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1); /* Subtle divider */
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+      padding: 6rem 0 2rem;
+  }
+
+  .contact-headlines {
+      margin-bottom: 3rem;
+  }
+    
+  .contact-heading {
+      font-size: clamp(3rem, 12vw, 5rem); /* Prevents overflow */
+      word-break: break-word; /* Handle long words */
+      line-height: 0.9;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .buzz {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem;
+  }
+  
+  .footer-meta {
+      margin-top: 3rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: center;
+      font-size: 0.8rem;
+  }
+}

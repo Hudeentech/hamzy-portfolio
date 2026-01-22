@@ -1,0 +1,193 @@
+/* About Section (Home Component) - Graphic Design Editorial */
+.about-section {
+  padding: 10rem 0;
+  width: 92%;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  /* Orange Accent Variable */
+  --orange-accent: #FF6600; 
+}
+
+/* Background Guide - Removed */
+.about-section::before {
+    display: none;
+}
+
+/* Layout - 2 Column Grid */
+.abt-stream-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    padding-left: 0;
+    align-items: start;
+}
+
+/* Header Left */
+.abt-header-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 5rem;
+}
+
+.abt-meta-label {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1rem;
+    color: var(--orange-accent);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Remove line decoration */
+}
+.abt-meta-label::before { display: none; }
+
+.abt-massive-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.abt-role-scroller {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-top: 1rem;
+    border-bottom: 2px solid var(--orange-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Right Content */
+.abt-body-block {
+    max-width: 100%;
+}
+
+.abt-bio-lead {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.3;
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 3rem;
+}
+
+.abt-bio-lead span {
+    color: var(--text-muted);
+}
+
+.abt-bio-secondary {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 600px;
+    border: none;
+    padding-left: 0;
+}
+
+/* Banner Image - make it a clean sharp image block */
+.abt-visual-banner {
+    width: 100%;
+    margin-top: 4rem;
+    aspect-ratio: 16/7;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Clean, full color */
+    transition: transform 0.7s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.abt-visual-banner:hover .banner-img {
+    transform: scale(1.05);
+}
+
+/* Hide Overlay UI */
+.banner-ui-overlay { display: none; }
+
+/* Stats - Clean Typography */
+.abt-stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--text-main);
+    margin-top: 4rem;
+}
+
+.minimal-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.m-stat-val {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--text-main);
+    font-weight: 800;
+}
+
+.m-stat-label {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .about-section {
+      padding: 6rem 0;
+      width: 90%; /* Ensure margin for 375px */
+  }
+  
+  .abt-stream-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+  }
+  
+  .abt-header-block {
+      position: relative;
+      top: 0;
+      gap: 1rem;
+  }
+  
+  .abt-massive-title {
+      font-size: clamp(3rem, 12vw, 5rem); /* Scaled down for mobile */
+      line-height: 0.95;
+      word-break: break-word;
+  }
+  
+  .abt-bio-lead {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+  }
+  
+  .abt-visual-banner {
+      margin-top: 2rem;
+  }
+
+  .abt-stats-row {
+      flex-direction: column;
+      gap: 2.5rem;
+      padding-top: 2rem;
+      margin-top: 3rem;
+  }
+  
+  .m-stat-val {
+      font-size: 3rem;
+  }
+}

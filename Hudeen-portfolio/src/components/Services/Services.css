@@ -1,0 +1,148 @@
+/* Services - Graphic Design Editorial */
+.svc {
+  padding: 10rem 0;
+  width: 100%;
+  background: var(--bg-main);
+  position: relative;
+  overflow: hidden;
+  --orange-accent: #FF6600;
+}
+
+/* Background - Pure Clean */
+.svc::after {
+  display: none;
+}
+
+.svc-header-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1600px;
+  width: 92%;
+  margin: 0 auto 6rem;
+  z-index: 2;
+  position: relative;
+}
+
+.section-number-outline {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1rem;
+  color: var(--orange-accent); /* Orange */
+  margin-bottom: 1.5rem;
+  display: block;
+  font-weight: 700;
+  border: none;
+  padding: 0;
+}
+
+.svc-container > h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-main);
+  line-height: 0.9;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Service Grid - Swiss Style */
+.svc-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cols for desktop */
+  gap: 4rem; /* Wide gap */
+  width: 92%;
+  max-width: 1600px; /* Aligned with others */
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.svc-card {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--text-main); /* Top divider line */
+  padding: 2rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 300px; /* Minimal height */
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.svc-card:hover {
+  border-color: var(--orange-accent); /* Orange on hover */
+  transform: translateY(-10px);
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Remove corner decorations */
+.svc-card::before, .svc-card::after {
+  display: none;
+}
+
+/* Numbering / Meta */
+.svc-card-meta {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  padding: 0;
+}
+
+.svc-card:hover .svc-card-meta {
+    color: var(--orange-accent);
+}
+
+.svc-content-wrapper {
+  flex-grow: 1;
+}
+
+.svc-card h4 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.svc-card p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .svc {
+      padding: 6rem 0;
+  }
+  
+  .svc-card-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 90%;
+  }
+  
+  .svc-card {
+      min-height: auto;
+      padding-top: 1.5rem;
+  }
+
+  .svc-container > h2 {
+    font-size: clamp(3rem, 12vw, 4rem);
+    margin-bottom: 1rem;
+  }
+  
+  .svc-card h4 {
+      font-size: 2rem;
+  }
+}

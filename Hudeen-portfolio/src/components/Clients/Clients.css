@@ -1,0 +1,99 @@
+/* Clients Section */
+.clients-section {
+    padding: 8rem 0;
+    width: 100%;
+    background: transparent;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    --orange-accent: #FF6600;
+  }
+  
+  .clients-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  /* Header */
+  .clients-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .clients-subtitle {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1rem;
+    color: var(--orange-accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+  
+  .clients-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: var(--text-main);
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+  }
+  
+  /* Grid Layout */
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .client-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: 4px; /* Slight rounded styling or keep sharp */
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+  
+  .client-logo-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--orange-accent);
+  }
+  
+  .client-logo-img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+  }
+  
+  .client-logo-card:hover .client-logo-img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 900px) {
+    .clients-section {
+        padding: 5rem 0;
+    }
+  
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 1rem;
+    }
+  
+    .client-logo-card {
+        height: 120px;
+    }
+  }

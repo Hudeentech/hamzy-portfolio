@@ -1,0 +1,346 @@
+/* Project Page - Graphic Design Portfolio Style */
+/* Concept: "The Gallery" - Clean, Image-Focused, Editorial Typography */
+
+.prj-page-container {
+    padding: 6rem 0;
+    width: 92%;
+    max-width: 1600px; /* Wider for gallery feel */
+    margin: 0 auto;
+    min-height: 100vh;
+    --orange-accent: #FF6600;
+    --accent-primary: #FF6600;
+    --text-primary: #000;
+    --bg-white: #fff;
+}
+
+/* Header Section - Editorial Style */
+.prj-page-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 6rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    position: relative;
+}
+
+.prj-page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: var(--orange-accent);
+}
+
+.prj-page-title h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 8vw, 7rem); /* Massive typography */
+    font-weight: 900;
+    color: var(--text-main);
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.prj-page-title h2 span {
+    display: inline-block;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.2rem;
+    color: var(--orange-accent);
+    margin-bottom: 1rem;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+/* Filter Buttons - Minimalist Pills */
+.toggel-btn {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    font-family: 'Space Grotesk', monospace;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--orange-accent);
+    transition: width 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.filter-btn:hover::after,
+.filter-btn.active::after {
+    width: 100%;
+}
+
+/* Grid Layout - Asymmetrical feeling or clean gallery */
+.prj-page-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    row-gap: 6rem;
+}
+
+/* Project Card - Stripped down, no borders, just art */
+.prj-card {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    group: hover; /* placeholder concept */
+}
+
+/* Hover Effect: Image Focus */
+.prj-img-container {
+    width: 100%;
+    aspect-ratio: 16/10; /* Slightly taller for design feel */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.5rem;
+    background: #f0f0f0; /* Lazy load placeholder color */
+}
+
+.prj-p-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2, 1, 0.2, 1), filter 0.3s ease;
+}
+
+.prj-card:hover .prj-p-img {
+    transform: scale(1.03);
+    /* No filter effects, pure image */
+}
+
+/* Card Content - Minimalist Typography below image */
+.prj-main-c {
+    padding: 0;
+    position: relative;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.prj-main-c .name {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1;
+}
+
+/* Use description area for tags/category appearance instead of long text */
+.prj-main-desc {
+    padding: 0;
+    margin-top: 0.5rem;
+    border: none;
+}
+
+.prj-main-desc p {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 90%;
+    line-height: 1.4;
+}
+
+.prj-card:hover .name {
+    color: var(--orange-accent);
+    transition: color 0.3s ease;
+}
+
+/* Modal Styling - Immersive */
+.p-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* White overlay for graphic design feel */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    padding: 0;
+}
+
+[data-theme='dark'] .p-modal-overlay {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.p-modal-content {
+    background: transparent;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    overflow-y: auto;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    position: relative;
+    box-shadow: none;
+}
+
+.p-close-modal-btn {
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 3001;
+    transition: color 0.2s ease;
+    mix-blend-mode: difference; /* Visible on light/dark images */
+}
+
+.p-close-modal-btn:hover {
+    color: var(--orange-accent);
+}
+
+.p-modal-content h2 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    line-height: 0.9;
+}
+
+.p-modal-content p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.p-modal-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.p-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--text-main);
+    color: var(--bg-main);
+    font-family: 'Space Grotesk', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.p-btn:hover {
+    background: var(--orange-accent);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .prj-page-container {
+        width: 90%;
+        padding: 6rem 0;
+    }
+
+    .prj-page-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .prj-page-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .prj-page-title h2 {
+        font-size: clamp(3rem, 10vw, 4rem);
+    }
+    
+    /* Horizontal Scroll for Filters */
+    .toggel-btn {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        white-space: nowrap;
+        justify-content: flex-start;
+        margin-top: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .filter-btn {
+        flex-shrink: 0;
+        font-size: 0.9rem;
+    }
+    
+    .p-modal-content {
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+        padding: 1.5rem;
+    }
+    
+    .p-modal-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .p-close-modal-btn {
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .p-btn {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+}
