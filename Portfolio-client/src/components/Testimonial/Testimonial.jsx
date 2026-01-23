@@ -12,7 +12,7 @@ function Testimonial() {
   const [autoSelectIndex, setAutoSelectIndex] = useState(0); 
 
   useEffect(() => {
-    fetch('https://hudeen-review.vercel.app/api/testimonials/approved')
+    fetch('https://hamzy-review.vercel.app/api/testimonials/approved')
       .then((res) => res.json())
       .then((data) => {
         // Handle response structure (it might be an array or an object with a data or value property)
