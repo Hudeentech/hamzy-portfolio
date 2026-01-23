@@ -68,7 +68,7 @@ function Footer() {
 
         <motion.button
           className="buzz"
-          onClick={() => window.location = `mailto:${footerData.email || 'Hudeen09@gmail.com'}`}
+          onClick={() => window.location = `mailto:${footerData.email || 'Duhamzy@gmail.com'}`}
           variants={itemVariants}
         >
           {footerData.buttonText || "Start A Project"}
@@ -76,7 +76,7 @@ function Footer() {
       </div>
 
       <div className="footer-meta">
-         <span>{footerData.copyright || "© 2024 DANESI HAMZAH."}</span>
+         <span>{footerData.copyright || "© 2026 DANESI HAMZAH."}</span>
          <span>ALL SYSTEMS NORMINAL.</span>
       </div>
     </motion.footer>
